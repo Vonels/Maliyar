@@ -1,0 +1,467 @@
+.section {
+  padding: 32px 0;
+
+  background: #dcecf3;
+  color: #111;
+}
+
+.layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.85fr)
+    minmax(310px, 0.9fr)
+    minmax(500px, 1.55fr);
+
+  min-height: 390px;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo {
+  position: relative;
+
+  min-height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: #999;
+}
+
+.photoImage {
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 600ms ease;
+}
+
+.photo:hover .photoImage {
+  transform: scale(1.035);
+}
+
+/* затемнение снизу, чтобы текст хорошо читался */
+
+.photoGradient {
+  position: absolute;
+
+  z-index: 1;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.12) 62%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+
+  pointer-events: none;
+}
+
+.photoBottom {
+  position: absolute;
+
+  z-index: 2;
+
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 80px;
+
+  padding: 17px 18px;
+
+  background: rgba(18, 19, 18, 0.92);
+  color: #fff;
+}
+
+.photoBottom strong {
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.photoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+  color: #111;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.photoButton:hover {
+  background: var(--yellow-hover);
+
+  transform: translateX(3px);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 25px 34px;
+}
+
+.eyebrow {
+  margin-bottom: 7px;
+
+  color: #777;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.title {
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(37px, 3vw, 50px);
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+}
+
+.title span {
+  color: var(--yellow);
+}
+
+.locations {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 25px;
+}
+
+.locations > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.locations p {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.locations p span {
+  font-size: 5px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 210px;
+  min-height: 47px;
+
+  margin-top: 25px;
+
+  padding: 0 17px;
+
+  background: #171817;
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  transition: 180ms ease;
+}
+
+.button b {
+  font-size: 17px;
+}
+
+.button:hover {
+  background: var(--yellow);
+  color: #111;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map {
+  position: relative;
+
+  min-width: 0;
+  min-height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background: #e7e6e0;
+}
+
+.mapImage {
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.72) contrast(0.9) brightness(1.08);
+}
+
+.mapTint {
+  position: absolute;
+
+  z-index: 1;
+
+  inset: 0;
+
+  background: rgba(255, 249, 225, 0.08);
+
+  pointer-events: none;
+}
+
+/* =========================
+   30 KM CIRCLE
+========================= */
+
+.radius {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 50%;
+  left: 51%;
+
+  width: min(58%, 330px);
+
+  aspect-ratio: 1;
+
+  border: 2px solid rgba(245, 181, 27, 0.9);
+  border-radius: 50%;
+
+  background: rgba(245, 181, 27, 0.25);
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+/* =========================
+   BRATISLAVA
+========================= */
+
+.mapCenter {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+}
+
+.mapCenter strong {
+  margin-top: 7px;
+
+  padding: 3px 7px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: #111;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   PIN
+========================= */
+
+.pin {
+  position: relative;
+
+  width: 28px;
+  height: 36px;
+
+  border-radius: 50% 50% 50% 0;
+
+  background: #111;
+
+  transform: rotate(-45deg);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.pin span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* =========================
+   30 KM LINE
+========================= */
+
+.distance {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  width: 50%;
+
+  transform: rotate(8deg);
+  transform-origin: left center;
+}
+
+.distance > span {
+  flex: 1;
+
+  height: 1px;
+
+  margin-left: 20px;
+
+  border-top: 1px dashed rgba(17, 17, 17, 0.75);
+}
+
+.distance strong {
+  margin-left: 7px;
+
+  padding: 2px 4px;
+
+  color: #111;
+
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1150px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .map {
+    grid-column: 1 / -1;
+
+    min-height: 480px;
+  }
+
+  .radius {
+    width: 340px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .section {
+    padding: 20px 0;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .photo {
+    min-height: 360px;
+  }
+
+  .info {
+    padding: 35px 5px;
+  }
+
+  .title {
+    font-size: 43px;
+  }
+
+  .map {
+    min-height: 400px;
+  }
+
+  .radius {
+    width: 280px;
+  }
+}
+
+@media (max-width: 420px) {
+  .locations {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 39px;
+  }
+
+  .radius {
+    width: 250px;
+  }
+}

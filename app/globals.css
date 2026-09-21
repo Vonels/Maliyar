@@ -1,0 +1,58 @@
+:root {
+  --black: #101112;
+  --black-soft: #181a1c;
+  --white: #f7f6f1;
+  --yellow: #f5b51b;
+  --yellow-hover: #ffc632;
+  --gray: #a8a8a3;
+  --border: rgba(255, 255, 255, 0.12);
+
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-inter), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(calc(100% - 32px), var(--container));
+  }
+}
