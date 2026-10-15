@@ -11,13 +11,12 @@ export default function Header() {
 
         <nav className={styles.nav}>
           <Link href="#services">Služby</Link>
-          <Link href="#portfolio">Realizácie</Link>
           <Link href="#about">O mne</Link>
           <Link href="#contact">Kontakt</Link>
         </nav>
 
-        <Link href="#calculator" className={styles.button}>
-          Vypočítať cenu
+        <Link href="#contact" className={styles.button}>
+          Získať ponuku
           <span>↗</span>
         </Link>
       </div>

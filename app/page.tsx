@@ -2,7 +2,7 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import ServiceArea from "@/components/ServiceArea/ServiceArea";
 import Service from "@/components/Service/Service";
-import Calculator from "@/components/Calculator/Calculator";
+import Contact from "@/components/Contact/Contact";
 import WhyMe from "@/components/WhyMe/WhyMe";
 import Reviews from "@/components/Reviews/Rewiews";
 import Footer from "@/components/Footer/Footer";
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <ServiceArea />
       <Service />
-      <Calculator />
+      <Contact />
       <WhyMe />
       <Reviews />
       <Footer />

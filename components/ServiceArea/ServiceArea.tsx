@@ -81,11 +81,6 @@ export default function ServiceArea() {
               ))}
             </div>
           </div>
-
-          <a href="#contact" className={styles.button}>
-            <span>ZOBRAZIŤ CELÚ OBLASŤ</span>
-            <b>→</b>
-          </a>
         </div>
 
         {/* MAP */}

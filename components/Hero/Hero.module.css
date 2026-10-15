@@ -373,3 +373,205 @@
     flex-basis: 32px;
   }
 }
+
+.contactWrapper {
+  position: relative;
+}
+
+/* поскольку теперь это button */
+.secondary {
+  cursor: pointer;
+}
+
+/* POPUP */
+
+.contactPopup {
+  position: absolute;
+
+  z-index: 50;
+
+  top: calc(100% + 12px);
+  left: 0;
+
+  width: 265px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+
+  background: rgba(13, 18, 20, 0.97);
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(10px);
+
+  animation: contactOpen 180ms ease;
+}
+
+/* маленькая стрелочка сверху */
+
+.contactPopup::before {
+  content: "";
+
+  position: absolute;
+
+  top: -6px;
+  left: 28px;
+
+  width: 11px;
+  height: 11px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: #0d1214;
+
+  transform: rotate(45deg);
+}
+
+/* TITLE */
+
+.popupTitle {
+  display: block;
+
+  padding: 7px 10px 10px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* OPTION */
+
+.contactOption {
+  display: grid;
+
+  grid-template-columns: 38px 1fr 20px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 57px;
+
+  padding: 8px 10px;
+
+  border-radius: 3px;
+
+  color: #fff;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.contactOption + .contactOption {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.contactOption:hover {
+  background: rgba(255, 255, 255, 0.07);
+
+  transform: translateX(2px);
+}
+
+/* ICON */
+
+.optionIcon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--yellow);
+  border-radius: 50%;
+
+  color: var(--yellow);
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.whatsapp {
+  border-color: #25d366;
+
+  color: #25d366;
+}
+
+/* TEXT */
+
+.contactOption > div:nth-child(2) {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.contactOption strong {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.contactOption span {
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 9px;
+}
+
+/* ARROW */
+
+.contactOption > b {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 15px;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.contactOption:hover > b {
+  color: var(--yellow);
+
+  transform: translateX(2px);
+}
+
+/* ANIMATION */
+
+@keyframes contactOpen {
+  from {
+    opacity: 0;
+
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .contactWrapper {
+    width: 100%;
+  }
+
+  .contactPopup {
+    right: 0;
+    left: 0;
+
+    width: 100%;
+  }
+}

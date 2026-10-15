@@ -59,6 +59,7 @@
   color: #777;
 
   font-size: 9px;
+
   line-height: 1.5;
 }
 
@@ -110,7 +111,9 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
 }
 
-/* STARS */
+/* ========================================
+   STARS
+======================================== */
 
 .stars {
   margin-bottom: 7px;
@@ -122,7 +125,9 @@
   letter-spacing: 1px;
 }
 
-/* TEXT */
+/* ========================================
+   REVIEW TEXT
+======================================== */
 
 .reviewText {
   flex: 1;
@@ -134,7 +139,9 @@
   line-height: 1.45;
 }
 
-/* AUTHOR */
+/* ========================================
+   AUTHOR
+======================================== */
 
 .author {
   display: flex;
@@ -201,7 +208,12 @@
   width: 30px;
   height: 40px;
 
+  padding: 0;
+
+  border: 0;
+
   background: transparent;
+
   color: #333;
 
   font-size: 27px;
@@ -228,7 +240,7 @@
 }
 
 /* ========================================
-   CTA
+   YELLOW STRIP
 ======================================== */
 
 .cta {
@@ -238,9 +250,11 @@
   align-items: center;
   justify-content: space-between;
 
+  gap: 50px;
+
   min-height: 95px;
 
-  padding: 16px 70px;
+  padding: 16px 55px;
 
   overflow: hidden;
 
@@ -249,10 +263,9 @@
   color: #111;
 }
 
-/*
-  Неровные края мазка.
-  Не картинка — просто CSS.
-*/
+/* ========================================
+   BRUSH EDGES
+======================================== */
 
 .ctaBrushLeft,
 .ctaBrushRight {
@@ -311,7 +324,7 @@
 }
 
 /* ========================================
-   CTA TEXT
+   CTA LEFT
 ======================================== */
 
 .ctaText {
@@ -322,31 +335,36 @@
   display: flex;
   align-items: center;
 
-  gap: 22px;
+  flex: 0 0 auto;
+
+  gap: 20px;
 }
 
 .ctaText p {
   display: flex;
   flex-direction: column;
 
-  gap: 2px;
+  gap: 3px;
 }
 
 .ctaText strong {
   font-family: var(--font-manrope), sans-serif;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
 
   line-height: 1.15;
 }
 
 .ctaText p > span {
-  font-size: 12px;
+  color: rgba(17, 17, 17, 0.65);
+
+  font-size: 9px;
+  font-weight: 600;
 }
 
 /* ========================================
-   CSS PAINT ROLLER
+   PAINT ROLLER
 ======================================== */
 
 .roller {
@@ -403,94 +421,114 @@
 }
 
 /* ========================================
-   CTA BUTTONS
+   GUARANTEES
 ======================================== */
 
-.ctaActions {
+.guarantees {
   position: relative;
 
   z-index: 2;
 
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  flex: 1;
+
+  max-width: 760px;
+}
+
+/* ========================================
+   GUARANTEE
+======================================== */
+
+.guarantee {
   display: flex;
   align-items: center;
 
-  gap: 18px;
-}
-
-.offerButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 235px;
-  height: 52px;
-
-  border-radius: 5px;
-
-  background: #15191a;
-  color: #fff;
-
-  font-size: 9px;
-  font-weight: 900;
-
-  transition:
-    transform 180ms ease,
-    background 180ms ease;
-}
-
-.offerButton:hover {
-  background: #272c2e;
-
-  transform: translateY(-2px);
-}
-
-/* PHONE */
-
-.phoneButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
 
   gap: 12px;
 
-  width: 220px;
-  height: 52px;
+  padding: 0 24px;
 
-  border: 1.5px solid rgba(17, 17, 17, 0.65);
-  border-radius: 5px;
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.guaranteeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 36px;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1.5px solid rgba(17, 17, 17, 0.75);
+  border-radius: 50%;
 
   color: #111;
 
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
-}
-
-.phoneButton:hover {
-  background: rgba(255, 255, 255, 0.18);
-
-  transform: translateY(-2px);
-}
-
-.phoneIcon {
-  font-size: 18px;
-}
-
-.phoneButton > span:last-child {
-  display: flex;
-  flex-direction: column;
-
-  gap: 2px;
-}
-
-.phoneButton strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 900;
 }
 
-.phoneButton small {
+.guarantee > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 3px;
+}
+
+.guarantee strong {
+  color: #111;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  white-space: nowrap;
+}
+
+.guarantee span {
+  color: rgba(17, 17, 17, 0.62);
+
   font-size: 7px;
-  font-weight: 700;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+}
+
+/* ========================================
+   DESKTOP SMALL
+======================================== */
+
+@media (max-width: 1200px) {
+  .cta {
+    gap: 30px;
+
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .guarantee {
+    padding: 0 15px;
+  }
+
+  .guarantee strong {
+    font-size: 9px;
+  }
+
+  .guarantee span {
+    font-size: 6.5px;
+  }
 }
 
 /* ========================================
@@ -517,24 +555,26 @@
   }
 
   .cta {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 22px;
+
     padding: 25px 45px;
   }
 
-  .ctaActions {
-    gap: 10px;
+  .guarantees {
+    width: 100%;
+    max-width: none;
   }
 
-  .offerButton {
-    width: 190px;
-  }
-
-  .phoneButton {
-    width: 190px;
+  .guarantee:first-child {
+    border-left: 0;
   }
 }
 
 /* ========================================
-   MOBILE
+   MOBILE / TABLET
 ======================================== */
 
 @media (max-width: 750px) {
@@ -549,13 +589,15 @@
   .cards {
     display: flex;
 
+    gap: 12px;
+
     overflow-x: auto;
+
+    padding-bottom: 10px;
 
     scroll-snap-type: x mandatory;
 
     scrollbar-width: none;
-
-    padding-bottom: 10px;
   }
 
   .cards::-webkit-scrollbar {
@@ -573,27 +615,114 @@
   }
 
   .cta {
-    flex-direction: column;
+    padding: 25px 30px;
+  }
+
+  .guarantees {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .guarantee {
     align-items: flex-start;
 
+    gap: 8px;
+
+    padding: 0 10px;
+  }
+
+  .guaranteeIcon {
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  .guarantee strong,
+  .guarantee span {
+    white-space: normal;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .reviewsRow {
+    padding-bottom: 25px;
+  }
+
+  .heading h2 {
+    font-size: 27px;
+  }
+
+  .cta {
     gap: 25px;
 
-    padding: 30px;
+    padding: 28px 25px;
   }
 
   .ctaText {
     gap: 15px;
   }
 
-  .ctaActions {
-    width: 100%;
-
-    flex-direction: column;
-    align-items: stretch;
+  .ctaText strong {
+    font-size: 13px;
   }
 
-  .offerButton,
-  .phoneButton {
+  .guarantees {
+    grid-template-columns: 1fr;
+
     width: 100%;
+  }
+
+  .guarantee {
+    min-height: 58px;
+
+    padding: 10px 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 0;
+  }
+
+  .guarantee:first-child {
+    border-top: 0;
+  }
+
+  .guaranteeIcon {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .guarantee strong {
+    font-size: 10px;
+  }
+
+  .guarantee span {
+    font-size: 7px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+  .cta {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .roller {
+    flex-basis: 42px;
+
+    transform: scale(0.9);
+    transform-origin: left center;
+  }
+
+  .ctaText strong {
+    font-size: 12px;
   }
 }

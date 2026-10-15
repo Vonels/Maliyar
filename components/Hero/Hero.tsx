@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "./Hero.module.css";
 
+const PHONE = "+421948123456";
+
 const benefits = [
   {
     icon: "◇",
@@ -31,9 +33,13 @@ export default function Hero() {
 
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
+          {/* EYEBROW */}
+
           <p className={styles.eyebrow}>
             PROFESIONÁLNY <span>MALIAR</span>
           </p>
+
+          {/* TITLE */}
 
           <h1 className={styles.title}>
             Kvalitná maľba,
@@ -42,6 +48,8 @@ export default function Hero() {
             </span>
           </h1>
 
+          {/* DESCRIPTION */}
+
           <p className={styles.description}>
             Maľovanie bytov, domov a komerčných priestorov
             <br />
@@ -49,17 +57,25 @@ export default function Hero() {
             <br />a férové ceny.
           </p>
 
+          {/* BUTTONS */}
+
           <div className={styles.actions}>
-            <Link href="#calculator" className={styles.primary}>
-              <span className={styles.buttonIcon}>▦</span>
-              VYPOČÍTAŤ CENU
+            {/* ПЕРВАЯ КНОПКА — К КОНТАКТАМ */}
+
+            <Link href="#contact" className={styles.primary}>
+              <span className={styles.buttonIcon}>→</span>
+              ZÍSKAŤ CENOVÚ PONUKU
             </Link>
 
-            <Link href="#contact" className={styles.secondary}>
-              <span className={styles.phone}>●</span>
+            {/* ВТОРАЯ КНОПКА — СРАЗУ ЗВОНОК */}
+
+            <a href={`tel:${PHONE}`} className={styles.secondary}>
+              <span className={styles.phone}>☎</span>
               ZAVOLAŤ MAJSTROVI
-            </Link>
+            </a>
           </div>
+
+          {/* BENEFITS */}
 
           <div className={styles.benefits}>
             {benefits.map((benefit) => (
@@ -68,6 +84,7 @@ export default function Hero() {
 
                 <div>
                   <strong>{benefit.title}</strong>
+
                   <span>{benefit.text}</span>
                 </div>
               </div>

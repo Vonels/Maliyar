@@ -6,37 +6,37 @@ const services = [
   {
     title: "Maľovanie stien a stropov",
     price: "od 2,5 €/m²",
-    image: "/images/services/painting.jpg",
+    image: "/images/onephoto.jpg",
     icon: "▣",
   },
   {
     title: "Stierkovanie a vyrovnávanie",
     price: "od 5,5 €/m²",
-    image: "/images/services/plaster.jpg",
+    image: "/images/twophoto.jpg",
     icon: "△",
   },
   {
     title: "Penetrácia povrchov",
     price: "od 0,8 €/m²",
-    image: "/images/services/primer.jpg",
+    image: "/images/treephoto.jpg",
     icon: "⌂",
   },
   {
     title: "Maľovanie fasád domov",
     price: "od 4 €/m²",
-    image: "/images/services/facade.jpg",
+    image: "/images/fourphoto.jpg",
     icon: "▱",
   },
   {
     title: "Náter dverí, okien a radiátorov",
     price: "od 15 €",
-    image: "/images/services/doors.jpg",
+    image: "/images/fivephoto.jpg",
     icon: "□",
   },
   {
     title: "Príprava a upratanie po práci",
     price: "dohodou",
-    image: "/images/services/preparation.jpg",
+    image: "/images/sixphoto.jpg",
     icon: "↗",
   },
 ];
@@ -74,7 +74,8 @@ export default function Services() {
                 src={service.image}
                 alt={service.title}
                 fill
-                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                quality={100}
+                sizes="(max-width: 650px) 100vw, (max-width: 1100px) 50vw, 320px"
                 className={styles.cardImage}
               />
 

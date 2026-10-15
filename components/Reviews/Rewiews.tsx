@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./Reviews.module.css";
 
 const reviews = [
@@ -26,7 +25,9 @@ export default function Reviews() {
   return (
     <section className={styles.section} id="reviews">
       <div className="container">
-        {/* REVIEWS */}
+        {/* =================================
+            REVIEWS
+        ================================= */}
 
         <div className={styles.reviewsRow}>
           <div className={styles.heading}>
@@ -39,6 +40,7 @@ export default function Reviews() {
 
           <div className={styles.slider}>
             <button
+              type="button"
               className={`${styles.sliderButton} ${styles.prev}`}
               aria-label="Predchádzajúce recenzie"
             >
@@ -65,6 +67,7 @@ export default function Reviews() {
             </div>
 
             <button
+              type="button"
               className={`${styles.sliderButton} ${styles.next}`}
               aria-label="Ďalšie recenzie"
             >
@@ -73,11 +76,15 @@ export default function Reviews() {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* =================================
+            SERVICE GUARANTEE
+        ================================= */}
 
         <div className={styles.cta}>
           <div className={styles.ctaBrushLeft} />
           <div className={styles.ctaBrushRight} />
+
+          {/* LEFT */}
 
           <div className={styles.ctaText}>
             <div className={styles.roller}>
@@ -87,28 +94,47 @@ export default function Reviews() {
 
             <p>
               <strong>
-                Potrebujete vymaľovať byt, dom
+                Bez starostí od začiatku
                 <br />
-                alebo kanceláriu?
+                až do konca
               </strong>
 
-              <span>Bratislava a okolie do 30 km</span>
+              <span>O všetko sa postarám za vás</span>
             </p>
           </div>
 
-          <div className={styles.ctaActions}>
-            <Link href="#contact" className={styles.offerButton}>
-              ZÍSKAŤ CENOVÚ PONUKU
-            </Link>
+          {/* GUARANTEES */}
 
-            <a href="tel:+421948123456" className={styles.phoneButton}>
-              <span className={styles.phoneIcon}>☎</span>
+          <div className={styles.guarantees}>
+            <div className={styles.guarantee}>
+              <div className={styles.guaranteeIcon}>✓</div>
 
-              <span>
-                <strong>+421 948 123 456</strong>
-                <small>Po–Ne 8:00 – 19:00</small>
-              </span>
-            </a>
+              <div>
+                <strong>Čistá práca</strong>
+
+                <span>Ochrana nábytku a podlahy</span>
+              </div>
+            </div>
+
+            <div className={styles.guarantee}>
+              <div className={styles.guaranteeIcon}>€</div>
+
+              <div>
+                <strong>Férová cena</strong>
+
+                <span>Bez skrytých poplatkov</span>
+              </div>
+            </div>
+
+            <div className={styles.guarantee}>
+              <div className={styles.guaranteeIcon}>★</div>
+
+              <div>
+                <strong>Záruka kvality</strong>
+
+                <span>Za svojou prácou si stojím</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
