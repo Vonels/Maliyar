@@ -51,10 +51,8 @@ export default function Hero() {
           {/* DESCRIPTION */}
 
           <p className={styles.description}>
-            Maľovanie bytov, domov a komerčných priestorov
-            <br />
-            v Bratislave a okolí do 30 km. Čistá práca, spoľahlivosť
-            <br />a férové ceny.
+            Maľovanie bytov, domov a komerčných priestorov v Bratislave a okolí
+            do 30 km. Čistá práca, spoľahlivosť a férové ceny.
           </p>
 
           {/* BUTTONS */}
