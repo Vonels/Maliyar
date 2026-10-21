@@ -16,6 +16,10 @@
   color: #fff;
 }
 
+/* =====================================
+   LAYOUT
+===================================== */
+
 .layout {
   display: grid;
 
@@ -29,7 +33,7 @@
 }
 
 /* =====================================
-   LEFT
+   LEFT / INTRO
 ===================================== */
 
 .intro {
@@ -60,6 +64,7 @@
   font-weight: 800;
 
   line-height: 1.08;
+
   letter-spacing: -0.045em;
 }
 
@@ -113,7 +118,6 @@
   left: 10px;
 
   width: 95px;
-
   height: 3px;
 }
 
@@ -122,14 +126,13 @@
   left: 20px;
 
   width: 67px;
-
   height: 2px;
 
   opacity: 0.8;
 }
 
 /* =====================================
-   GRID
+   SERVICES GRID
 ===================================== */
 
 .grid {
@@ -147,93 +150,119 @@
 .card {
   position: relative;
 
-  min-height: 165px;
+  min-height: 180px;
 
   overflow: hidden;
 
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 7px;
 
-  background: #eee;
+  background: #171b1b;
 
-  color: #111;
+  color: #fff;
 
   isolation: isolate;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 
   transition:
     transform 220ms ease,
-    box-shadow 220ms ease;
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
 .card:hover {
+  border-color: rgba(245, 181, 27, 0.35);
+
   transform: translateY(-4px);
 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
 }
 
+/* =====================================
+   CARD IMAGE
+===================================== */
+
 .cardImage {
-  z-index: -3;
+  z-index: -2;
 
   object-fit: cover;
+  object-position: center;
+
+  /*
+    Чуть увеличиваем изображение,
+    чтобы по краям не появлялись полоски.
+  */
+  transform: scale(1.015);
 
   transition: transform 500ms ease;
 }
 
 .card:hover .cardImage {
-  transform: scale(1.05);
+  transform: scale(1);
 }
 
-/*
-  Сверху видна фотография,
-  снизу постепенно появляется белая область.
-*/
+/* =====================================
+   IMAGE SHADE
+===================================== */
 
 .imageShade {
   position: absolute;
 
-  z-index: -2;
+  z-index: 1;
 
   inset: 0;
 
+  /*
+    Верх почти без затемнения.
+    Затемнение начинается с середины.
+    Внизу полностью тёмный фон для текста.
+  */
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.02) 0%,
-    rgba(255, 255, 255, 0.04) 37%,
-    rgba(250, 250, 248, 0.92) 59%,
-    #f7f7f4 76%,
-    #f7f7f4 100%
+    rgba(12, 16, 17, 0.02) 0%,
+    rgba(12, 16, 17, 0.03) 30%,
+    rgba(12, 16, 17, 0.08) 45%,
+    rgba(12, 16, 17, 0.22) 55%,
+    rgba(12, 16, 17, 0.5) 66%,
+    rgba(12, 16, 17, 0.78) 77%,
+    rgba(23, 27, 27, 0.96) 90%,
+    #171b1b 100%
   );
+
+  pointer-events: none;
 }
 
 /* =====================================
-   ICON
+   CARD ICON
 ===================================== */
 
 .cardIcon {
   position: absolute;
 
-  z-index: 2;
+  z-index: 3;
 
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 31px;
-  height: 31px;
+  width: 32px;
+  height: 32px;
 
-  border: 1.5px solid var(--yellow);
+  border: 1.5px solid rgba(245, 181, 27, 0.9);
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(12, 16, 17, 0.82);
 
-  color: #dba011;
+  color: var(--yellow);
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+
+  backdrop-filter: blur(4px);
 }
 
 /* =====================================
@@ -243,9 +272,11 @@
 .cardContent {
   position: absolute;
 
+  z-index: 3;
+
   right: 13px;
-  bottom: 12px;
-  left: 16px;
+  bottom: 13px;
+  left: 15px;
 
   display: flex;
   align-items: flex-end;
@@ -258,24 +289,34 @@
   min-width: 0;
 }
 
+/* TITLE */
+
 .cardContent h3 {
   margin-bottom: 6px;
 
-  color: #111;
+  color: #fff;
 
   font-family: var(--font-manrope), sans-serif;
 
   font-size: 11px;
   font-weight: 800;
 
-  line-height: 1.15;
+  line-height: 1.2;
+
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.cardContent span {
-  color: #252525;
+/* PRICE */
 
-  font-size: 10px;
-  font-weight: 700;
+.cardContent span {
+  color: var(--yellow);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 }
 
 /* =====================================
@@ -287,21 +328,22 @@
   align-items: center;
   justify-content: center;
 
-  flex: 0 0 27px;
+  flex: 0 0 28px;
 
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
 
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(9, 12, 13, 0.82);
 
-  color: #111;
+  color: #fff;
 
   font-size: 15px;
   font-weight: 700;
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
 
   transition:
     background 180ms ease,
@@ -311,6 +353,8 @@
 
 .card:hover .arrow {
   background: var(--yellow);
+
+  color: #111;
 
   transform: translateX(2px);
 }
@@ -335,11 +379,19 @@
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .card {
-    min-height: 190px;
+    min-height: 200px;
+  }
+
+  .cardContent h3 {
+    font-size: 12px;
+  }
+
+  .cardContent span {
+    font-size: 10px;
   }
 }
 
@@ -369,14 +421,71 @@
   .grid {
     grid-template-columns: 1fr;
 
-    gap: 12px;
+    gap: 14px;
   }
 
   .card {
-    min-height: 190px;
+    min-height: 210px;
+  }
+
+  .cardIcon {
+    top: 15px;
+    left: 15px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .cardContent {
+    right: 15px;
+    bottom: 15px;
+    left: 16px;
   }
 
   .cardContent h3 {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .cardContent span {
+    font-size: 10px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+
+    flex-basis: 30px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 430px) {
+  .section {
+    padding: 42px 0;
+  }
+
+  .intro h2 {
+    font-size: 31px;
+  }
+
+  .card {
+    min-height: 195px;
+  }
+
+  .imageShade {
+    background: linear-gradient(
+      180deg,
+      rgba(12, 16, 17, 0.02) 0%,
+      rgba(12, 16, 17, 0.03) 30%,
+      rgba(12, 16, 17, 0.08) 44%,
+      rgba(12, 16, 17, 0.24) 55%,
+      rgba(12, 16, 17, 0.54) 67%,
+      rgba(12, 16, 17, 0.82) 79%,
+      rgba(23, 27, 27, 0.97) 91%,
+      #171b1b 100%
+    );
   }
 }

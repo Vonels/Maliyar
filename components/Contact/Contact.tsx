@@ -1,7 +1,7 @@
 import styles from "./Contact.module.css";
 
-const PHONE = "+421948123456";
-const WHATSAPP = "421948123456";
+const PHONE = "+421951285550";
+const WHATSAPP = "421951285550";
 const TELEGRAM = "your_username";
 
 export default function Contact() {
@@ -41,7 +41,7 @@ export default function Contact() {
 
               <div className={styles.contactText}>
                 <span>TELEFÓN</span>
-                <strong>+421 948 123 456</strong>
+                <strong>+421 951 285 550</strong>
                 <small>Zavolať majstrovi</small>
               </div>
 

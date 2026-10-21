@@ -22,7 +22,7 @@ const services = [
     icon: "⌂",
   },
   {
-    title: "Maľovanie fasád domov",
+    title: "Oprava prasklín a poškodení stien",
     price: "od 4 €/m²",
     image: "/images/fourphoto.jpg",
     icon: "▱",
@@ -88,8 +88,6 @@ export default function Services() {
                   <h3>{service.title}</h3>
                   <span>{service.price}</span>
                 </div>
-
-                <div className={styles.arrow}>→</div>
               </div>
             </Link>
           ))}

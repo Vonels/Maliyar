@@ -44,51 +44,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* CONTACT */}
-
-        <div className={styles.column}>
-          <h3>Kontakt</h3>
-
-          <div className={styles.contacts}>
-            <a href="tel:+421948123456">
-              <span>☎</span>
-              +421 948 123 456
-            </a>
-
-            <a href="mailto:maliar.bratislava@gmail.com">
-              <span>✉</span>
-              maliar.bratislava@gmail.com
-            </a>
-
-            <p>
-              <span>⌖</span>
-              Bratislava a okolie do 30 km
-            </p>
-          </div>
-        </div>
-
-        {/* SOCIAL */}
-
-        <div className={styles.social}>
-          <h3>Sledujte ma</h3>
-
-          <div className={styles.socialLinks}>
-            <a href="#" aria-label="Facebook" className={styles.socialButton}>
-              f
-            </a>
-
-            <a href="#" aria-label="Instagram" className={styles.socialButton}>
-              ◎
-            </a>
-
-            <a href="#" aria-label="YouTube" className={styles.socialButton}>
-              ▶
-            </a>
-          </div>
-        </div>
-
-        {/* SLOGAN */}
-
         <div className={styles.slogan}>
           <span>Spolu vytvoríme</span>
           <strong>krajšie priestory</strong>

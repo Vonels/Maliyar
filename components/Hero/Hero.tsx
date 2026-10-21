@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Hero.module.css";
 
-const PHONE = "+421948123456";
+const PHONE = "+421951285550";
 
 const benefits = [
   {
