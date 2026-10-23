@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 
 const PHONE = "+421951285550";
 const WHATSAPP = "421951285550";
-const TELEGRAM = "your_username";
+const TELEGRAM = "SmalMaliar";
 
 export default function Contact() {
   return (

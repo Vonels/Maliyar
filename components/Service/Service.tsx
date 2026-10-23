@@ -23,7 +23,7 @@ const services = [
   },
   {
     title: "Oprava prasklín a poškodení stien",
-    price: "od 4 €/m²",
+    price: "od 5 €/m²",
     image: "/images/fourphoto.jpg",
     icon: "▱",
   },

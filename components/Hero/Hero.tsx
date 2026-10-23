@@ -6,7 +6,7 @@ const PHONE = "+421951285550";
 const benefits = [
   {
     icon: "◇",
-    title: "10+",
+    title: "20+",
     text: "rokov skúseností",
   },
   {
